@@ -1,0 +1,23 @@
+<%= form_for @sentiment do |f| %>
+ 
+  <% if @sentiment.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4>
+        <%= pluralize(@sentiment.errors.count, "error") %> prohibited
+        this room from being saved:
+      </h4>
+      <ul>
+        <% @sentiment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="form-group">
+    <%= f.label :text %><br>
+    <%= f.text_area :text, class: 'form-control', required: true %>
+  </div>
+ 
+  <%= f.submit 'Submit', class: 'btn btn-primary' %> <%= link_to 'Show Complete List', sentiments_path, :class => "btn btn-primary" %>
+<% end %>

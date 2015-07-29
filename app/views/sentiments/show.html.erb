@@ -1,0 +1,4 @@
+<h1><%= (@sentiment.behavior + " response").humanize %></h1>
+<p class="lead">Response: <%= @sentiment.text %></p>
+
+<%= link_to 'Complete List', sentiments_path, :class => "btn btn-primary" %> <%= link_to 'New Post', new_sentiment_path, :class => "btn btn-primary" %>
